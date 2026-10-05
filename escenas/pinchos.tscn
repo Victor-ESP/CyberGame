@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bxe0sytonr4wo"]
+
+[ext_resource type="Texture2D" uid="uid://bfe2ellceqk5v" path="res://Sheets/SheetsCyber/cyber/factoryTiles/4 Animated objects/Saw.png" id="1_4rnli"]
+[ext_resource type="Script" uid="uid://c2c6w26gpu1mc" path="res://scripts/pinchos.gd" id="1_rvpb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynb4b"]
+size = Vector2(126.5, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvpb6"]
+atlas = ExtResource("1_4rnli")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oesdp"]
+atlas = ExtResource("1_4rnli")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upm35"]
+atlas = ExtResource("1_4rnli")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gah3n"]
+atlas = ExtResource("1_4rnli")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4gf0"]
+atlas = ExtResource("1_4rnli")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74d52"]
+atlas = ExtResource("1_4rnli")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6snss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvpb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oesdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upm35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gah3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4gf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74d52")
+}],
+"loop": 1,
+"name": &"sierra",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(129, 20)
+
+[node name="pinchos" type="Node2D" unique_id=978068927]
+
+[node name="pinchos" type="StaticBody2D" parent="." unique_id=556572543]
+light_mask = 2
+script = ExtResource("1_rvpb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pinchos" unique_id=1391676354]
+position = Vector2(47.75, 7)
+shape = SubResource("RectangleShape2D_ynb4b")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="pinchos" unique_id=1671461018]
+position = Vector2(64, 2)
+sprite_frames = SubResource("SpriteFrames_6snss")
+animation = &"sierra"
+autoplay = "sierra"
+frame_progress = 0.7539344
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="pinchos" unique_id=1405792827]
+position = Vector2(32, 2)
+sprite_frames = SubResource("SpriteFrames_6snss")
+animation = &"sierra"
+autoplay = "sierra"
+frame_progress = 0.29474142
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pinchos" unique_id=1483883998]
+position = Vector2(-1, 2)
+sprite_frames = SubResource("SpriteFrames_6snss")
+animation = &"sierra"
+autoplay = "sierra"
+frame_progress = 0.9422502
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="pinchos" unique_id=666272064]
+position = Vector2(97, 2)
+sprite_frames = SubResource("SpriteFrames_6snss")
+animation = &"sierra"
+autoplay = "sierra"
+frame_progress = 0.24423908
+
+[node name="Area2D" type="Area2D" parent="pinchos" unique_id=375167925]
+position = Vector2(48, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pinchos/Area2D" unique_id=749115936]
+shape = SubResource("RectangleShape2D_6snss")
+
+[connection signal="body_entered" from="pinchos/Area2D" to="pinchos" method="_on_area_2d_body_entered"]

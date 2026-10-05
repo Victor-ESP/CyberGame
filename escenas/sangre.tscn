@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://4tqcp0epl5g0"]
+
+[ext_resource type="Texture2D" uid="uid://c323fl8rld0v6" path="res://Sheets/SheetsCyber/cyber/ghost/Yurei/Charge_2.png" id="1_01ejw"]
+[ext_resource type="Script" uid="uid://skdivwccgesj" path="res://scripts/sangre.gd" id="1_bvuji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcetx"]
+atlas = ExtResource("1_01ejw")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kehhh"]
+atlas = ExtResource("1_01ejw")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pbg1"]
+atlas = ExtResource("1_01ejw")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwt7m"]
+atlas = ExtResource("1_01ejw")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvuji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcetx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kehhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pbg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwt7m")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jemsx"]
+size = Vector2(8.5, 3)
+
+[node name="sangre" type="Node2D" unique_id=378883446]
+
+[node name="sangre" type="Area2D" parent="." unique_id=1471845183]
+script = ExtResource("1_bvuji")
+
+[node name="sangre" type="AnimatedSprite2D" parent="sangre" unique_id=2131985880]
+sprite_frames = SubResource("SpriteFrames_bvuji")
+autoplay = "default"
+
+[node name="collisionSangre" type="CollisionShape2D" parent="sangre" unique_id=1811723988]
+shape = SubResource("RectangleShape2D_jemsx")
+
+[connection signal="body_entered" from="sangre" to="sangre" method="_on_body_entered"]

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://divi50nq6w38c"]
+
+[ext_resource type="Texture2D" uid="uid://djjomo11soo6c" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/1.png" id="1_q6syr"]
+[ext_resource type="Texture2D" uid="uid://k75ogkfgmy54" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/2.png" id="2_7whn6"]
+[ext_resource type="Texture2D" uid="uid://da74m02cox8c3" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/3.png" id="3_ftjol"]
+[ext_resource type="Texture2D" uid="uid://cgj2bjp5nt5dj" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/4.png" id="4_kq8la"]
+[ext_resource type="Texture2D" uid="uid://jgcq7shymnko" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/5.png" id="5_ajbnd"]
+[ext_resource type="PackedScene" uid="uid://7qesaj7hq34k" path="res://escenas/player.tscn" id="6_7whn6"]
+[ext_resource type="PackedScene" uid="uid://d3hpxwcrux8qr" path="res://escenas/plataformas.tscn" id="7_ftjol"]
+[ext_resource type="PackedScene" uid="uid://bxe0sytonr4wo" path="res://escenas/pinchos.tscn" id="7_kq8la"]
+[ext_resource type="PackedScene" uid="uid://bd6dm628t6vsf" path="res://escenas/jefe_giratorio.tscn" id="7_y4dti"]
+[ext_resource type="PackedScene" uid="uid://dhv7iqjyfbae4" path="res://escenas/bala.tscn" id="8_ajbnd"]
+[ext_resource type="PackedScene" uid="uid://cu4utsqhdujpl" path="res://escenas/perro.tscn" id="10_g1hbb"]
+[ext_resource type="PackedScene" uid="uid://th14f70be8eo" path="res://escenas/platformFactory.tscn" id="11_6d7v1"]
+[ext_resource type="PackedScene" uid="uid://bdy5c1jdl78yq" path="res://escenas/onryo.tscn" id="11_b8uwk"]
+[ext_resource type="PackedScene" uid="uid://b5olwgm2b1fcv" path="res://escenas/gas.tscn" id="13_o2rla"]
+
+[node name="principal" type="Node2D" unique_id=1947710622]
+
+[node name="background" type="Sprite2D" parent="." unique_id=591887535]
+position = Vector2(587.5, 334.5)
+scale = Vector2(3.0399306, 3.0648148)
+texture = ExtResource("1_q6syr")
+
+[node name="background2" type="Sprite2D" parent="background" unique_id=237424882]
+texture = ExtResource("2_7whn6")
+
+[node name="background3" type="Sprite2D" parent="background/background2" unique_id=1266701383]
+texture = ExtResource("3_ftjol")
+
+[node name="background4" type="Sprite2D" parent="background/background2/background3" unique_id=2112875754]
+position = Vector2(-511.36038, -186.47131)
+texture = ExtResource("4_kq8la")
+offset = Vector2(511.3604, 187.77644)
+
+[node name="background5" type="Sprite2D" parent="background/background2/background3/background4" unique_id=1110370797]
+position = Vector2(510.20908, 186.63446)
+texture = ExtResource("5_ajbnd")
+
+[node name="jugador" type="Node" parent="." unique_id=1471297939]
+
+[node name="player" parent="jugador" unique_id=791101788 instance=ExtResource("6_7whn6")]
+position = Vector2(394, 492)
+
+[node name="enemigos" type="Node" parent="." unique_id=39733839]
+
+[node name="gas" parent="enemigos" unique_id=1613394048 instance=ExtResource("13_o2rla")]
+position = Vector2(895, 440.00003)
+
+[node name="perro" parent="enemigos" unique_id=580825563 instance=ExtResource("10_g1hbb")]
+position = Vector2(147, 513)
+
+[node name="fantasma" parent="enemigos" unique_id=141141749 instance=ExtResource("8_ajbnd")]
+position = Vector2(278, 382)
+
+[node name="JefeGiratorio" parent="enemigos" unique_id=1841430462 instance=ExtResource("7_y4dti")]
+position = Vector2(162, 487)
+velocidad_rotacion = 2.0
+
+[node name="Node2D" parent="enemigos" unique_id=374198139 instance=ExtResource("11_b8uwk")]
+position = Vector2(757, 270)
+
+[node name="objetos" type="Node" parent="." unique_id=300327217]
+
+[node name="pinchos" parent="objetos" unique_id=978068927 instance=ExtResource("7_kq8la")]
+position = Vector2(478, 520)
+
+[node name="noEnemigos" type="Node" parent="." unique_id=1540178832]
+
+[node name="plataformas" type="Node" parent="." unique_id=466717905]
+
+[node name="TileMapLayer" parent="plataformas" unique_id=1983284208 instance=ExtResource("7_ftjol")]
+position = Vector2(35, 538)
+
+[node name="factory" parent="plataformas" unique_id=880397959 instance=ExtResource("11_6d7v1")]
+position = Vector2(908, 514)

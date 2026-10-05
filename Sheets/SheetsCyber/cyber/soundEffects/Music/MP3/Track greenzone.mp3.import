@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ce3xx3bhs5f7q"
+path="res://.godot/imported/Track greenzone.mp3-c4d3c6c69736bc8c5e15a49594b65098.mp3str"
+
+[deps]
+
+source_file="res://Sheets/SheetsCyber/cyber/soundEffects/Music/MP3/Track greenzone.mp3"
+dest_files=["res://.godot/imported/Track greenzone.mp3-c4d3c6c69736bc8c5e15a49594b65098.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://40p05amg1qfi"
+path="res://.godot/imported/Access denied.wav-698ccd63bd7d860e372b3c24b89d3833.sample"
+
+[deps]
+
+source_file="res://Sheets/SheetsCyber/cyber/soundEffects/Sounds/Access denied.wav"
+dest_files=["res://.godot/imported/Access denied.wav-698ccd63bd7d860e372b3c24b89d3833.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://julllmtapl1l"]
+
+[ext_resource type="Texture2D" uid="uid://c1ujtnw6bumqi" path="res://Sheets/SheetsCyber/cyber/UI/5 Logo/Logo2.png" id="1_bfths"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6snss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(341, 20)
+
+[node name="Node2D" type="Node2D" unique_id=1310544223]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=602595867]
+physics_material_override = SubResource("PhysicsMaterial_6snss")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1681445906]
+texture = ExtResource("1_bfths")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1365403650]
+position = Vector2(1, -43)
+shape = SubResource("RectangleShape2D_6snss")

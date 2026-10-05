@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://b5olwgm2b1fcv"]
+
+[ext_resource type="Texture2D" uid="uid://b73pd36gen3ad" path="res://Sheets/SheetsCyber/cyber/factoryTiles/4 Animated objects/Gas_start.png" id="1_n2ja3"]
+[ext_resource type="Script" uid="uid://cvxn224kwo151" path="res://scripts/gas.gd" id="1_syxc8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vicex"]
+size = Vector2(20, 67.001205)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fc0o"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvv2e"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htik2"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pmxd"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5ege"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1htd"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1pqw"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqklo"]
+atlas = ExtResource("1_n2ja3")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aui74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fc0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvv2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htik2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pmxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5ege")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1htd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1pqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqklo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="gas" type="Area2D" unique_id=1055056781]
+rotation = 1.5463617
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_syxc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2103535069]
+light_mask = 2
+position = Vector2(-1, 38)
+rotation = 0.017453292
+shape = SubResource("RectangleShape2D_vicex")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=110560978]
+position = Vector2(-1.0750172, 43.986866)
+rotation = -3.1415925
+scale = Vector2(1, 1.0972222)
+sprite_frames = SubResource("SpriteFrames_aui74")
+autoplay = "default"
+frame_progress = 0.47801906
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

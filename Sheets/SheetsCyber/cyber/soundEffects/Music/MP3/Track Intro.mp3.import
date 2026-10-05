@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t86gciq13vrr"
+path="res://.godot/imported/Track Intro.mp3-8b16800578a1d33e18b6431207682d8b.mp3str"
+
+[deps]
+
+source_file="res://Sheets/SheetsCyber/cyber/soundEffects/Music/MP3/Track Intro.mp3"
+dest_files=["res://.godot/imported/Track Intro.mp3-8b16800578a1d33e18b6431207682d8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
