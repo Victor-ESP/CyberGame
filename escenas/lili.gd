@@ -1,33 +1,38 @@
 extends CharacterBody2D
 
-@onready var sprite: AnimatedSprite2D = $SpriteVampira
+# Referencia al sprite
+@onready var sprite: AnimatedSprite2D = $SpriteLili
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 var estaMuerta = false
 
 func _enter_tree() -> void:
-	# El servidor le dará como nombre el ID de red (ej. "1", "29481920")
+	# Asignar la autoridad de red basada en el ID del nodo
 	set_multiplayer_authority(name.to_int())
 
 func _physics_process(delta: float) -> void:
-	# SI NO SOMOS EL DUEÑO DE ESTE PERSONAJE, IGNORAMOS LOS INPUTS DEL TECLADO
+	# Si no es nuestro personaje local, no procesamos los inputs
 	if not is_multiplayer_authority():
 		return
 
+	# Gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	# Bloqueo si está muerta
 	if estaMuerta:
 		velocity.x = 0
 		move_and_slide()
 		return
 
+	# Salto
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	var multiplier = 1.5 if Input.is_action_pressed("run") else 1.0
 
+	# Movimiento horizontal
 	if Input.is_action_pressed("left"):
 		sprite.flip_h = true
 		velocity.x = -SPEED * multiplier
@@ -38,11 +43,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 
 	move_and_slide()
+
 func _process(_delta: float) -> void:
-	if estaMuerta:
+	# Si no somos la autoridad local, tampoco reproducimos animaciones por Input local
+	if not is_multiplayer_authority() or estaMuerta:
 		return
 
-	# Gestión de animaciones
+	# Gestión de animaciones usando la referencia 'sprite'
 	if is_on_floor():
 		if velocity.x == 0:
 			sprite.play("idle")

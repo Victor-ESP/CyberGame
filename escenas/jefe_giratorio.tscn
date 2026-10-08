@@ -118,6 +118,7 @@ velocidad_rotacion = null
 
 [node name="cuerpoPrincipal" type="CharacterBody2D" parent="." unique_id=699944777]
 light_mask = 2
+texture_filter = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cuerpoPrincipal" unique_id=106648342]
 sprite_frames = SubResource("SpriteFrames_6snss")
@@ -137,6 +138,7 @@ shape = SubResource("CircleShape2D_aui74")
 
 [node name="Area2D" type="Area2D" parent="pivote" unique_id=494029965]
 light_mask = 2
+texture_filter = 1
 position = Vector2(79, -1)
 collision_layer = 2
 

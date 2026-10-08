@@ -48,6 +48,7 @@ size = Vector2(8.5, 3)
 script = ExtResource("1_bvuji")
 
 [node name="sangre" type="AnimatedSprite2D" parent="sangre" unique_id=2131985880]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bvuji")
 autoplay = "default"
 

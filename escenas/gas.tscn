@@ -71,6 +71,7 @@ animations = [{
 }]
 
 [node name="gas" type="Area2D" unique_id=1055056781]
+texture_filter = 1
 rotation = 1.5463617
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_syxc8")

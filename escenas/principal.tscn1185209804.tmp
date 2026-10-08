@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://da74m02cox8c3" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/3.png" id="3_ftjol"]
 [ext_resource type="Texture2D" uid="uid://cgj2bjp5nt5dj" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/4.png" id="4_kq8la"]
 [ext_resource type="Texture2D" uid="uid://jgcq7shymnko" path="res://Sheets/SheetsCyber/cyber/citySheet/1 Backgrounds/1/Day/5.png" id="5_ajbnd"]
+[ext_resource type="PackedScene" uid="uid://7qesaj7hq34k" path="res://escenas/player.tscn" id="6_7whn6"]
 [ext_resource type="Texture2D" uid="uid://7smjpan10tjv" path="res://Sheets/SheetsCyber/cyber/factoryTiles/1 Tiles/Tileset.png" id="6_l4vcb"]
 [ext_resource type="PackedScene" uid="uid://d3hpxwcrux8qr" path="res://escenas/plataformas.tscn" id="7_ftjol"]
 [ext_resource type="PackedScene" uid="uid://bxe0sytonr4wo" path="res://escenas/pinchos.tscn" id="7_kq8la"]
@@ -319,6 +320,9 @@ tile_set = SubResource("TileSet_lfkbx")
 
 [node name="jugador" type="Node" parent="." unique_id=1471297939]
 
+[node name="player" parent="jugador" unique_id=791101788 instance=ExtResource("6_7whn6")]
+position = Vector2(132, 618)
+
 [node name="enemigos" type="Node" parent="." unique_id=39733839]
 
 [node name="gas" parent="enemigos" unique_id=1613394048 instance=ExtResource("13_o2rla")]
@@ -353,25 +357,3 @@ position = Vector2(908, 514)
 [node name="areaSalida" parent="." unique_id=1784251949 instance=ExtResource("16_nwl1k")]
 position = Vector2(1369.9999, 827)
 rotation = -1.5749955
-
-[node name="BotonCliente" type="Button" parent="." unique_id=484852951]
-offset_left = 88.0
-offset_top = 82.0
-offset_right = 147.0
-offset_bottom = 113.0
-text = "Unirse"
-
-[node name="BotonServidor" type="Button" parent="." unique_id=1118032997]
-offset_left = 59.0
-offset_top = 122.0
-offset_right = 179.0
-offset_bottom = 153.0
-action_mode = 0
-text = "Crear Servidor"
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=741442670]
-_spawnable_scenes = PackedStringArray("uid://7qesaj7hq34k", "uid://b3h3uc6iaforw")
-spawn_path = NodePath("..")
-
-[connection signal="pressed" from="BotonCliente" to="Servidor" method="_on_boton_cliente_pressed"]
-[connection signal="pressed" from="BotonServidor" to="Servidor" method="_on_boton_servidor_pressed"]

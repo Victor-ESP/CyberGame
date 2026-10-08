@@ -60,6 +60,7 @@ animations = [{
 size = Vector2(129, 20)
 
 [node name="pinchos" type="Node2D" unique_id=978068927]
+texture_filter = 1
 
 [node name="pinchos" type="StaticBody2D" parent="." unique_id=556572543]
 light_mask = 2

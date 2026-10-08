@@ -417,6 +417,7 @@ script = ExtResource("1_mcetx")
 shape = SubResource("CapsuleShape2D_5u116")
 
 [node name="onryo" type="AnimatedSprite2D" parent="enemigoNuevo" unique_id=331473812]
+texture_filter = 1
 position = Vector2(4, -30)
 sprite_frames = SubResource("SpriteFrames_lfkbx")
 animation = &"lanzar"

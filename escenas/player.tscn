@@ -438,7 +438,13 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_w7fad"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="vampira" type="CharacterBody2D" unique_id=1031537176]
+texture_filter = 1
 collision_mask = 3
 script = ExtResource("1_w7fad")
 
@@ -460,3 +466,7 @@ limit_right = 1550
 limit_bottom = 900
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1209768086]
+replication_config = SubResource("SceneReplicationConfig_w7fad")
+visibility_update_mode = 1
